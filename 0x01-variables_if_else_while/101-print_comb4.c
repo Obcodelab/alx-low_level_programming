@@ -12,20 +12,19 @@ int main(void)
 	int ten;
 	int hundred;
 
-	for (hundred = '0'; hundred <= '9'; hundred++)
+	for (hundred = 0; hundred < 8; hundred++)
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++)
+		for (ten = hundred + 1; ten < 9; ten++)
 		{
-			for (one = (ten + 1); one <= '9'; one++)
+			for (one = ten + 1; one < 10; one++)
 			{
-				putchar(hundred);
-				putchar(ten);
-				putchar(one);
-				if (hundred != '7' || ten != '8' || one != '9')
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				putchar((hundred % 10) + '0');
+				putchar((ten % 10) + '0');
+				putchar((one % 10) + '0');
+				if (hundred == 7 && ten == 8 && one == 9)
+					continue;
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}

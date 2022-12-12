@@ -10,30 +10,23 @@ int main(void)
 {
 	int tens;
 	int ones;
-	int t;
-	int o;
 
-	for (tens = '0'; tens = '9'; tens++)
+	for (tens = 0; tens < 100; tens++)
 	{
-		for (ones = '0'; ones = '9'; ones++)
+		for (ones = 0; ones < 100; ones++)
 		{
-			for (t = tens; t <= '9'; t++)
+			if (tens < ones)
 			{
-				for (o = ones + 1; o <= '9'; o++)
+				putchar((tens / 10) + 48);
+				putchar((tens % 10) + 48);
+				putchar(' ');
+				putchar((ones / 10) + 48);
+				putchar((ones % 10) + 48);
+				if (tens != 98 || ones != 99)
 				{
-					putchar(tens);
-					putchar(ones);
+					putchar(',');
 					putchar(' ');
-					putchar(t);
-					putchar(o);
-
-					if (!((tens == '9' && ones == '8') && (t == '9' && o == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
 				}
-				o = '0';
 			}
 		}
 	}
