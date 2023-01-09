@@ -40,6 +40,8 @@ char *str_concat(char *s1, char *s2)
 	if (result == NULL)
 		return (NULL);
 
+	for (i = 0; i < len1; i++)
+		result[i] = s1[i];
 	for (i = 0; j < len2; j++, i++)
 		result[i] = s2[j];
 	result[len] = '\0';
